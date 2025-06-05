@@ -31,24 +31,24 @@ header {
   margin-bottom: 50px;
 }
 
-header > div.heading {
+header > form.heading {
   display: flex;
   justify-content: space-between;
   width: 100%;
   align-items: center;
 }
 
-header > div.heading > h1 {
+header > form.heading > h1 {
   font-size: 32px;
   font-weight: 700;
   cursor: pointer;
 }
 
-header > div.heading > h1 > span {
+header > form.heading > h1 > span {
   color: #FF0A0A;
 }
 
-header > div.heading > input {
+header > form.heading > input {
   max-width: 285px;
   height: 40px;
   border-radius: 5px;
@@ -60,7 +60,7 @@ header > div.heading > input {
   color: white;
 }
 
-header > div.heading > input:focus {
+header > form.heading > input:focus {
   outline: #FF0909;
   caret-color: #fff;
 }
@@ -94,10 +94,12 @@ main {
 }
 
 main > div.meal-list {
+  max-width: 1440px;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  flex: 1;
   gap: 20px;
-  max-width: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -124,6 +126,13 @@ main > div.meal-list > div.meal-container > div.image-container {
   box-shadow: 0px 5.7px 9.5px rgba(0, 0, 0, 0.25);
 }
 
+main > div.meal-list > div.meal-container > div.image-container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 main > div.meal-list > div.meal-container > div.meal-description {
    display: flex;
    flex-direction: column;
@@ -143,10 +152,26 @@ main > div.meal-list > div.meal-container > div.meal-description > div.meal-text
 
 h2 {
   margin: 0;
+  width: 100px;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
 }
 
 p {
+  font-size: 10px;
+  width: 150px;
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
 }
 
 main > div.meal-list > div.meal-container > div.meal-description > button {
