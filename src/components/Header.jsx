@@ -19,6 +19,9 @@ export default function Header() {
 
     function handleClick(event) {
         addToCategory(event.target.name)
+        if (event.target.name === "") {
+            addToCategory("")
+        }
     }
 
     return (

@@ -100,6 +100,28 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+main > div.result-row {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  margin-left: 50px;
+  gap: 50px;
+}
+
+main > div.result-row > button {
+  width: 57px;
+  height: 25px;
+  padding: 4px 6px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: #FF4343;
+  scale: 1.2;
+  transition: opacity 0.3s ease;
 }
 
 main > div.meal-list {
@@ -192,6 +214,11 @@ main > div.meal-list > div.meal-container > div.meal-description > button {
   border-radius: 5px;
   background-color: #FF4343;
   align-self: flex-end;
+  transition: opacity 0.3s ease;
+}
+
+button:active {
+  opacity: 0.5;
 }
 
 @media (max-width: 1200px) {
