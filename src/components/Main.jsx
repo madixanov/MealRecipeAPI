@@ -5,11 +5,6 @@ export default function Main() {
         <main>
             <div className="meal-list">
                 <MealContainer />
-                <MealContainer />
-                <MealContainer />
-                <MealContainer />
-                <MealContainer />
-                <MealContainer />
             </div>
         </main>
     )
