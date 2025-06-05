@@ -16,6 +16,7 @@ body {
   min-height: 100vh;
   background-attachment: fixed;
   color: white;
+  padding-top: 350px;
 }
 
 header {
@@ -29,6 +30,12 @@ header {
   padding: 0 120px;
   gap: 50px;
   margin-bottom: 50px;
+  border-radius: 0 0 10px 10px;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  top: 0;
 }
 
 header > form.heading {
@@ -39,9 +46,11 @@ header > form.heading {
 }
 
 header > form.heading > h1 {
+  display: inline-block;
   font-size: 32px;
   font-weight: 700;
   cursor: pointer;
+  flex-wrap: nowrap;
 }
 
 header > form.heading > h1 > span {
@@ -94,7 +103,7 @@ main {
 }
 
 main > div.meal-list {
-  max-width: 1440px;
+  max-width: 1850px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -183,4 +192,46 @@ main > div.meal-list > div.meal-container > div.meal-description > button {
   border-radius: 5px;
   background-color: #FF4343;
   align-self: flex-end;
+}
+
+@media (max-width: 1200px) {
+  .meal-list {
+    width: 1110px;
+  }
+}
+
+@media (max-width: 800px) {
+  .meal-list {
+    width: 740px;
+  }
+}
+
+@media (max-width: 500px) {
+  .meal-list {
+    width: 370px;
+  }
+
+  header {
+    padding-top: 5px;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .heading {
+    flex-direction: column;
+    align-items: start ;
+    align-self: flex-start;
+  }
+
+  .heading > h1 {
+      white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+  }
+
+  .categories {
+    gap: 2px;
+    width: 200px;
+  }
 }

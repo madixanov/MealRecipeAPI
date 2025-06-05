@@ -32,7 +32,7 @@ export default function MealContainer() {
     return (
         meals.map((meal) => {
             return (
-                <div className="meal-container">
+                <div className="meal-container" key={meal.mealId}>
                     <div className="image-container">
                         <img src={meal.photo} alt={meal.mealName} />
                     </div>
