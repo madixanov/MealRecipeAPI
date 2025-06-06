@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { useCategoryStore } from "../../store/category-store"
 import { useMealStore } from "../../store/meal-store"
 import { gsap } from "gsap"
-import { Link, useLocation, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export default function MealContainer() {
 
@@ -14,8 +14,7 @@ export default function MealContainer() {
     const searchValue = useSearchStore((state) => state.searchValue)
 
     const addToMeal = useMealStore((state) => state.addToMeal)
-
-    const location = useLocation()
+    
     const navigate = useNavigate()
 
     useEffect(() => {

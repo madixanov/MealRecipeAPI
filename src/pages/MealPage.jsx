@@ -6,33 +6,15 @@ import { useEffect } from "react"
 export default function MealPage() {
     const meal = useMealStore((state) => state.meal)
 
+    useEffect(() => {
+    gsap.fromTo(".ingredient-heading", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 0.5})
+    gsap.fromTo(".content", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1})
+    gsap.fromTo(".instruction-container", {opacity: 0, y: 100}, {opacity: 1, y: 0, duration: 1.5})
+    }, [])
+
       if (!meal || !meal.mealName) {
         return <p>Loading meal...</p>;
     }
-
-    useEffect(() => {
-        gsap.fromTo(
-            ".ingredient-heading",
-            {opacity: 0, y: 100},
-            {opacity: 1, y: 0, duration: 0.5}
-        )
-    })
-
-    useEffect(() => {
-        gsap.fromTo(
-            ".content",
-            {opacity: 0, y: 100},
-            {opacity: 1, y: 0, duration: 1}
-        )
-    })
-
-    useEffect(() => {
-        gsap.fromTo(
-            ".instruction-container",
-            {opacity: 0, y: 100},
-            {opacity: 1, y: 0, duration: 1.5}
-        )
-    })
 
     return (
         <div className="meal-page-div">

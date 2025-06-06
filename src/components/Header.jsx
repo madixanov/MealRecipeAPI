@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { useSearchStore } from "../store/search-store"
 import { useCategoryStore } from "../store/category-store";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Header() {
     const addToSearch = useSearchStore((state) => state.addToSearch)
     const addToCategory = useCategoryStore((state) => state.addToCategory)
     const [ inputValue, setInputValue ] = useState("")
-
-    const location = useLocation();
 
     function handleChange(event) {
         setInputValue(event.target.value);
