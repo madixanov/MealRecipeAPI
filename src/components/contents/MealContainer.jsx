@@ -2,6 +2,8 @@ import { SEARCH_API } from "../api/search-api"
 import { useSearchStore } from "../../store/search-store"
 import { useState, useEffect } from "react"
 import { useCategoryStore } from "../../store/category-store"
+import { gsap } from "gsap"
+import { Link, useLocation } from "react-router-dom"
 
 export default function MealContainer() {
 
@@ -9,6 +11,8 @@ export default function MealContainer() {
 
     const category = useCategoryStore((state) => state.category)
     const searchValue = useSearchStore((state) => state.searchValue)
+
+    const location = useLocation()
 
     useEffect(() => {
     if (searchValue) {
@@ -30,6 +34,16 @@ export default function MealContainer() {
         fetchData()
     }
 }, [searchValue])
+
+    useEffect(() => {
+        if (category) {
+            gsap.fromTo(
+            ".meal-container",
+            {opacity: 0, y: 100},
+            {opacity: 1, y: 0, duration: 1}
+        )
+        } 
+    }, [category])
 
     function checkCategory() {
         if (category) {
@@ -61,7 +75,11 @@ export default function MealContainer() {
                                 <h2>{meal.mealName}</h2>
                                 <p>{meal.instructions}</p>
                             </div>
-                            <button>More...</button>
+                            <button>
+                                <Link to="/meal-instructions" className="header-link">
+                                    More...
+                                </Link>
+                            </button>
                         </div>
                     </div>)}
             )

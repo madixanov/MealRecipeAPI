@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { useSearchStore } from "../store/search-store"
 import { useCategoryStore } from "../store/category-store";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
     const addToSearch = useSearchStore((state) => state.addToSearch)
     const addToCategory = useCategoryStore((state) => state.addToCategory)
     const [ inputValue, setInputValue ] = useState("")
+
+    const location = useLocation();
 
     function handleChange(event) {
         setInputValue(event.target.value);
@@ -27,7 +30,11 @@ export default function Header() {
     return (
         <header>
             <form className="heading" onSubmit={handleSubmit}>
-                <h1>F<span>oo</span>dy Z<span>o</span>ne</h1>
+                <h1 className="wb-name">
+                    <Link to="/" className="header-link">
+                        F<span className="changed-letters">oo</span>dy Z<span className="changed-letters">o</span>ne
+                    </Link>
+                </h1>
                 <input type="text" placeholder="Search Food..." value={inputValue} onChange={handleChange}/>
             </form>
             <div className="categories">

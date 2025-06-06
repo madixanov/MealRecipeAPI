@@ -1,11 +1,14 @@
-import Header from "./components/Header"
-import Main from "./components/Main"
+import MainPage from "./pages/MainPage";
+import MealPage from "./pages/MealPage";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 export default function App() {
   return (
-    <>
-      <Header />
-      <Main />
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/meal-instructions" element={<MealPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }

@@ -45,18 +45,6 @@ header > form.heading {
   align-items: center;
 }
 
-header > form.heading > h1 {
-  display: inline-block;
-  font-size: 32px;
-  font-weight: 700;
-  cursor: pointer;
-  flex-wrap: nowrap;
-}
-
-header > form.heading > h1 > span {
-  color: #FF0A0A;
-}
-
 header > form.heading > input {
   max-width: 285px;
   height: 40px;
@@ -219,6 +207,23 @@ main > div.meal-list > div.meal-container > div.meal-description > button {
 
 button:active {
   opacity: 0.5;
+}
+
+.wb-name {
+  display: inline-block;
+  font-size: 32px;
+  font-weight: 700;
+  cursor: pointer;
+  flex-wrap: nowrap;
+}
+
+.changed-letters {
+  color: #FF0A0A;
+}
+
+.header-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 @media (max-width: 1200px) {
